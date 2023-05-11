@@ -5,21 +5,23 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="patrons")
 public class Patron {
 	@Id
-	private int patron_id;
+	private Long patron_id;
 	private String name;
 	
 	@OneToMany(mappedBy="patron")
 	private List<Book> books;
 
-	public int getPatron_id() {
+	public Long getPatron_id() {
 		return patron_id;
 	}
 
-	public void setPatron_id(int patron_id) {
+	public void setPatron_id(Long patron_id) {
 		this.patron_id = patron_id;
 	}
 
